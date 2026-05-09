@@ -11,7 +11,7 @@ const CONFIG = {
     birthHour: 17,
     birthMinute: 15,
     birthSecond: 0,
-    decimalPlaces: 5 // Number of decimal places to show for the age
+    decimalPlaces: 7 // Number of decimal places to show for the age
 };
 
 // ==========================================
