@@ -10,7 +10,8 @@ const CONFIG = {
     birthDay: 24,
     birthHour: 17,
     birthMinute: 15,
-    birthSecond: 0
+    birthSecond: 0,
+    decimalPlaces: 5 // Number of decimal places to show for the age
 };
 
 // ==========================================
@@ -40,5 +41,16 @@ const QUOTES = [
     { quote: "+elimle yapmasam anlamıcaktın<br><br>-sanki naptın ki elinle? Şöyle yaptın böyle yaptın", name: "", color: "dialogue" },
     { quote: "biz bu konuyu konuşursak sevişemeyiz", name: "Yaren", color: "yaren" },
     { quote: "gelirken yoğurt alır mısın", name: "Yaren", color: "yaren" },
-    { quote: "hastanım", name: "Ömer", color: "omer" }
+    { quote: "hastanım", name: "Ömer", color: "omer" },
+    { quote: "Korkular… Sonraki hedefiniz Akdeniz ileri", name: "Yaren", color: "yaren" },
+    { quote: "Korkunun Ömer’e faydası yok", name: "Yaren", color: "yaren" },
+    { quote: "Gün doğmadan Ömer korkar", name: "Yaren", color: "yaren" },
+    { quote: "Akmasa da korkar", name: "Yaren", color: "yaren" },
+    { quote: "Ömer düştüğü yerden korkar", name: "Yaren", color: "yaren" },
+    { quote: "Bir korkuyu bin kişi ister Ömer alır", name: "Yaren", color: "yaren" },
+    { quote: "Bir varmış bir korkmuş", name: "Yaren", color: "yaren" },
+    { quote: "Ömer’den korkan Ömer gibi korksun", name: "Yaren", color: "yaren" },
+    { quote: "Korkunun Ezel’e faydası yok", name: "Yaren", color: "yaren" },
+    { quote: "Sen farklı bi tür yavşaksın", name: "Yaren", color: "yaren" },
+    { quote: "baklavada gurur olmaz", name: "Yaren", color: "yaren" }
 ];

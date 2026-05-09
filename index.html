@@ -24,7 +24,7 @@
             <div class="container">
                 <h1 class="title">
                     <span>Happy</span>
-                    <span id="age">0.0000000000</span><span>th</span>
+                    <span id="age">0.00000</span><span>th</span>
                     <span>birth second!</span>
                 </h1>
                 <div class="subtitle">to my amazing girlfriend 💕</div>
@@ -38,22 +38,11 @@
                 <h2 class="section-title">Wishlist</h2>
                 <p class="section-description">A little list of things I'd love to give you, do with you, and experience together.</p>
                 <div class="cards-grid">
-                    <div class="card">
-                        <h3>Travel Together</h3>
-                        <p>Details about the trip can go here...</p>
-                    </div>
-                    <div class="card">
-                        <h3>A Special Gift</h3>
-                        <p>Description coming soon...</p>
-                    </div>
-                    <div class="card">
-                        <h3>Romantic Dinner</h3>
-                        <p>Description coming soon...</p>
-                    </div>
+
                 </div>
                 <!-- WhatsApp Button -->
                 <div style="margin-top: 1rem;">
-                    <a href="https://wa.me/905447275254?text=Merhaba,%20sana%20wishlist'ten%20yaz%C4%B1yorum!" target="_blank" class="whatsapp-btn">Bana WhatsApp'tan Yaz</a>
+                    <a href="https://wa.me/905447275254?text=Hi,%20I'm%20writing%20to%20you%20from%20the%20wishlist!" target="_blank" class="whatsapp-btn">Message me on WhatsApp</a>
                 </div>
             </div>
         </section>
@@ -124,9 +113,9 @@
             const now = new Date();
             const diffMs = now - birthDate;
             const age = diffMs / msPerYear;
-            
-            // Display with 10 decimal places to show it ticking smoothly
-            document.getElementById('age').textContent = age.toFixed(10);
+            // Display with configured decimal places to show it ticking smoothly
+            const decimals = CONFIG.decimalPlaces !== undefined ? CONFIG.decimalPlaces : 10;
+            document.getElementById('age').textContent = age.toFixed(decimals);
             
             // Request next frame for smooth animation (runs at ~60fps)
             requestAnimationFrame(updateAge);
