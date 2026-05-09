@@ -1,0 +1,278 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+    background-attachment: fixed;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #d81b60;
+    line-height: 1.6;
+}
+
+/* Navbar Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 15px rgba(216, 27, 96, 0.05);
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.nav-brand {
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: #c2185b;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ad1457;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ff4081;
+}
+
+/* Section Styles */
+.section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6rem 2rem 2rem;
+    box-sizing: border-box;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 4rem 3rem;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(216, 27, 96, 0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    animation: fadeIn 1.5s ease-out;
+    max-width: 900px;
+    width: 100%;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #c2185b;
+    font-weight: 800;
+}
+
+.section-description {
+    font-size: 1.2rem;
+    color: #ad1457;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+}
+
+/* Home Section Specifics */
+.title {
+    font-size: 3.5rem;
+    margin: 0;
+    font-weight: 800;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+    gap: 12px;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+}
+
+#age {
+    font-variant-numeric: tabular-nums;
+    color: #c2185b;
+    min-width: 320px;
+    display: inline-block;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: #ad1457;
+    margin-top: 1.5rem;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+.message {
+    font-size: 1.1rem;
+    color: #d81b60;
+    margin-top: 1rem;
+    font-style: italic;
+    opacity: 0.8;
+    font-weight: 400;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+}
+
+/* Cards Grid (Wishlist) */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    text-align: left;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(216, 27, 96, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(216, 27, 96, 0.2);
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #c2185b;
+}
+
+.card p {
+    color: #ad1457;
+    font-size: 0.95rem;
+}
+
+/* Quote Cards */
+.quote-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(216, 27, 96, 0.1);
+    margin-bottom: 1.5rem;
+    position: relative;
+    border-left: 5px solid #ccc;
+    transition: transform 0.3s ease;
+}
+
+.quote-card:hover {
+    transform: translateY(-3px);
+}
+
+.quote-text {
+    font-size: 1.3rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.quote-author {
+    font-weight: 600;
+    margin: 0;
+    text-align: right;
+}
+
+/* Yaren Quotes - Pink */
+.quote-card.yaren {
+    border-left-color: #ff4081;
+}
+.quote-card.yaren .quote-text {
+    color: #c2185b;
+}
+.quote-card.yaren .quote-author {
+    color: #d81b60;
+}
+
+/* Ömer Quotes - Blue */
+.quote-card.omer {
+    border-left-color: #2196f3;
+}
+.quote-card.omer .quote-text {
+    color: #1565c0;
+}
+.quote-card.omer .quote-author {
+    color: #1976d2;
+}
+
+/* Dialogue Quotes - Purple */
+.quote-card.dialogue {
+    border-left-color: #9c27b0;
+}
+.quote-card.dialogue .quote-text {
+    color: #6a1b9a;
+}
+
+/* WhatsApp Button */
+.whatsapp-btn {
+    display: inline-block;
+    background-color: #25d366;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    transition: all 0.3s ease;
+    margin-top: 2rem;
+}
+
+.whatsapp-btn:hover {
+    background-color: #128c7e;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(30px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+    }
+    #age {
+        min-width: auto;
+    }
+    .nav-brand {
+        font-size: 1rem;
+    }
+    .navbar {
+        padding: 1rem;
+    }
+    .nav-links {
+        gap: 0.8rem;
+    }
+    .nav-links a {
+        font-size: 0.9rem;
+    }
+    .section {
+        padding-top: 5rem;
+    }
+}

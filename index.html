@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birth Second!</title>
+    <!-- Import Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">💕 Our Journey</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#wishlist">Wishlist</a>
+            <a href="#quotes">Quotes</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="section">
+            <div class="container">
+                <h1 class="title">
+                    <span>Happy</span>
+                    <span id="age">0.0000000000</span><span>th</span>
+                    <span>birth second!</span>
+                </h1>
+                <div class="subtitle">to my amazing girlfriend 💕</div>
+                <div class="message">...because I want to celebrate every single moment with you, not just every year.</div>
+            </div>
+        </section>
+
+        <!-- Wishlist Section -->
+        <section id="wishlist" class="section">
+            <div class="container">
+                <h2 class="section-title">Wishlist</h2>
+                <p class="section-description">A little list of things I'd love to give you, do with you, and experience together.</p>
+                <div class="cards-grid">
+                    <div class="card">
+                        <h3>Travel Together</h3>
+                        <p>Details about the trip can go here...</p>
+                    </div>
+                    <div class="card">
+                        <h3>A Special Gift</h3>
+                        <p>Description coming soon...</p>
+                    </div>
+                    <div class="card">
+                        <h3>Romantic Dinner</h3>
+                        <p>Description coming soon...</p>
+                    </div>
+                </div>
+                <!-- WhatsApp Button -->
+                <div style="margin-top: 1rem;">
+                    <a href="https://wa.me/905447275254?text=Merhaba,%20sana%20wishlist'ten%20yaz%C4%B1yorum!" target="_blank" class="whatsapp-btn">Bana WhatsApp'tan Yaz</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quotes Section -->
+        <section id="quotes" class="section">
+            <div class="container">
+                <h2 class="section-title">Our Quotes</h2>
+                <p class="section-description">Unutulmaz repliklerimiz...</p>
+
+                <div id="quotes-container">
+                    <!-- Quotes will be loaded dynamically from config.js -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="config.js"></script>
+    <script>
+        const birthDate = new Date(
+            CONFIG.birthYear, 
+            CONFIG.birthMonth, 
+            CONFIG.birthDay, 
+            CONFIG.birthHour, 
+            CONFIG.birthMinute, 
+            CONFIG.birthSecond
+        );
+
+        // Precise year length in milliseconds (Gregorian calendar)
+        const msPerYear = 1000 * 60 * 60 * 24 * 365.2425;
+
+        function renderQuotes() {
+            const container = document.getElementById('quotes-container');
+            if (!container) return;
+            
+            QUOTES.forEach(q => {
+                const card = document.createElement('div');
+                card.className = `quote-card ${q.color}`;
+                
+                const text = document.createElement('p');
+                text.className = 'quote-text';
+                if (q.color === 'dialogue') {
+                    text.style.textAlign = 'left';
+                } else {
+                    text.textContent = `"${q.quote}"`;
+                }
+                
+                if (q.color === 'dialogue') {
+                    text.innerHTML = q.quote;
+                }
+                card.appendChild(text);
+                
+                if (q.name) {
+                    const author = document.createElement('p');
+                    author.className = 'quote-author';
+                    author.textContent = `- ${q.name}`;
+                    card.appendChild(author);
+                }
+                
+                container.appendChild(card);
+            });
+        }
+
+        // Initialize
+        renderQuotes();
+
+        function updateAge() {
+            const now = new Date();
+            const diffMs = now - birthDate;
+            const age = diffMs / msPerYear;
+            
+            // Display with 10 decimal places to show it ticking smoothly
+            document.getElementById('age').textContent = age.toFixed(10);
+            
+            // Request next frame for smooth animation (runs at ~60fps)
+            requestAnimationFrame(updateAge);
+        }
+
+        // Start the continuous animation
+        updateAge();
+
+        // Smooth scrolling for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
